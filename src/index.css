@@ -1,0 +1,153 @@
+@import "tailwindcss"; /* Importa todas as utilidades do TailwindCSS */
+/* ==============================
+   Paleta de cores personalizada (Lunysse v2)
+   ============================== */
+@theme {
+  --color-dark: #000000;    /* Preto – base sólida e contraste */
+  --color-accent: #17e2e9;  /* Azul vibrante – confiança e modernidade */
+  --color-light: #14caf3;   /* Azul claríssimo – calma e clareza */
+  --color-white: #caecf5;   /* Branco – pureza e equilíbrio */
+  --color-background: #ffffff; /* Fundo suave derivado do light */
+}
+
+/* ==============================
+   Fontes do projeto
+   ============================== */
+@font-face {
+  font-family: 'Horizon';
+  src: url('/fonts/Horizon.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Intro Rust';
+  src: url('/fonts/IntroRust.woff2') format('woff2');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap');
+
+/* ==============================
+   Estilo global
+   ============================== */
+   body {
+    font-family: 'Inria Serif', serif;
+    font-weight: 400;
+    background-color: var(--color-white); /* fundo branco */
+    min-height: 100vh;
+    color: var(--color-dark);
+  }
+
+/* Títulos chamativos */
+h1, h2, h3 {
+  font-family: 'Horizon', sans-serif;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+h4, h5, h6 {
+  font-family: 'Intro Rust', sans-serif;
+  color: var(--color-accent);
+}
+
+/* ==============================
+   Classes utilitárias de cores
+   ============================== */
+/* Fundo */
+.bg-dark { background-color: var(--color-dark); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-light { background-color: var(--color-light); }
+.bg-white { background-color: var(--color-white); }
+.bg-background { background-color: var(--color-background); }
+
+/* Texto */
+.text-dark { color: var(--color-dark); }
+.text-accent { color: var(--color-accent); }
+.text-light { color: var(--color-light); }
+.text-white { color: var(--color-white); }
+
+/* Bordas */
+.border-dark { border-color: var(--color-dark); }
+.border-accent { border-color: var(--color-accent); }
+.border-light { border-color: var(--color-light); }
+
+/* Ring (foco do Tailwind) */
+.ring-dark { --tw-ring-color: var(--color-dark); }
+.ring-accent { --tw-ring-color: var(--color-accent); }
+.ring-light { --tw-ring-color: var(--color-light); }
+
+/* ==============================
+   Efeitos de hover (interação)
+   ============================== */
+.hover\:bg-dark:hover { background-color: var(--color-dark); }
+.hover\:bg-accent:hover { background-color: var(--color-accent); }
+.hover\:bg-light:hover { background-color: var(--color-light); }
+.hover\:text-accent:hover { color: var(--color-accent); }
+
+/* ==============================
+   Efeito Glassmorphism
+   ============================== */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(53, 195, 221, 0.2);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+.glassmorphism-light {
+  background: rgba(239, 252, 255, 0.25);
+  backdrop-filter: blur(14px);
+  border-radius: 14px;
+  border: 1px solid rgba(53, 195, 221, 0.2);
+}
+
+/* ==============================
+   Botões
+   ============================== */
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-family: 'Intro Rust', sans-serif;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--color-dark);
+  transform: scale(1.03);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-accent);
+  font-family: 'Intro Rust', sans-serif;
+  transition: all 0.3s ease;
+}
+.btn-ghost:hover {
+  color: var(--color-dark);
+}
+
+/* ==============================
+   Inputs
+   ============================== */
+.input-field {
+  background: rgba(239, 252, 255, 0.3);
+  border: 1px solid rgba(53, 195, 221, 0.3);
+  transition: all 0.3s ease;
+}
+.input-field:focus {
+  background: rgba(239, 252, 255, 0.5);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(53, 195, 221, 0.3);
+}
+
+/* ==============================
+   Animações
+   ============================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
