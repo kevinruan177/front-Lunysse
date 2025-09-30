@@ -20,7 +20,7 @@ import { DashboardPsicologo } from '../pages/DashboardPsicologo';
 import { DashboardPaciente } from '../pages/DashboardPaciente';
 import { NotFound } from '../pages/NotFound';
 import { Agendamento } from '../pages/Agendamento';
- import { ChatIA } from '../pages/ChatIA';
+import { ChatIA } from '../pages/ChatIA';
 import { Relatorios } from '../pages/Relatorios';
 import { Solicitacoes } from '../pages/Solicitacoes';
 import { Pacientes } from '../pages/Paciente';
@@ -148,7 +148,7 @@ export const AppRoutes = () => {
              <PacienteDetalhes />
             </ProtectedRoute>
         } />
-            <Route path="/sessaodetalhes/:id" element={
+            <Route path="/sessao/:sessionId" element={
              <ProtectedRoute>
              <SessaoDetalhes />
             </ProtectedRoute>

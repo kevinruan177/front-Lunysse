@@ -151,3 +151,7 @@ h4, h5, h6 {
   from { opacity: 0; transform: translateY(25px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.clip-path-diagonal {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
